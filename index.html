@@ -738,7 +738,7 @@ async function sendToCoach(msg){
   try{
     const res=await fetch('https://darts-coach-proxy.marcusdepfeifferkey.workers.dev',{
       method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:buildContext(),messages:msgs})
+      body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:buildContext(),messages:msgs})
     });
     const data=await res.json();
     const reply=data.content?.find(b=>b.type==='text')?.text||"Couldn't reach the coach. Try again.";
